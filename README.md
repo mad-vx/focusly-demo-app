@@ -1,59 +1,26 @@
-# FocuslyDemo
+# 🧭 Focusly Demo Application
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.18.
+The **Focusly Demo Application** showcases intelligent keyboard navigation across complex grids of interactive controls using the **Focusly Angular library**.
 
-## Development server
+This demo presents **two independent grids**, each containing a mix of **text boxes, dropdowns, and other input controls**.  
+The purpose is to demonstrate how Focusly enables seamless focus management between multiple interactive components on a single page.
 
-To start a local development server, run:
+---
 
+## ✨ Features
+
+- Navigate **any grid of controls** using the keyboard  
+- Support for **multiple focus groups** on one page  
+- Works with **text boxes**, **dropdowns**, and other inputs  
+- Smooth directional navigation using **Alt + Arrow keys**  
+- Rapid switching between grids with **Alt + Page Up / Page Down**  
+- Quick jump to first/last item in a grid using **Alt + Home / End**
+
+---
+
+## ⚙️ Getting Started
+
+### 1. Clone the Repository
 ```bash
-ng serve
-```
-
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
-
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+git clone https://github.com/mad-vx/focusly-demo-app.git
+cd focusly-demo-app
