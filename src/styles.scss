@@ -33,11 +33,11 @@ table:hover {
   transform: scale(1.01);
 }
 
-td {
+td, select {
   padding: 0.5rem;
 }
 
-input[focusly] {
+input, input[focusly], select {
   width: 60px;
   height: 40px;
   text-align: center;
@@ -48,11 +48,15 @@ input[focusly] {
   transition: border-color 0.2s, box-shadow 0.2s, transform 0.1s;
 }
 
-input[focusly]:hover {
+select {
+    width: 100px;
+}
+
+input[focusly]:hover, select[focusly]:hover {
   border-color: #90caf9;
 }
 
-input[focusly]:focus {
+input[focusly]:focus, select[focusly]:focus {
   border-color: #1e88e5;
   box-shadow: 0 0 8px rgba(30, 136, 229, 0.4);
   transform: scale(1.05);
