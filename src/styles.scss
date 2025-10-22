@@ -1,0 +1,59 @@
+/* You can add global styles to this file, and also import other style files */
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f0f4f8, #dfe9f3);
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+  color: #333;
+  padding: 2rem;
+}
+
+h1 {
+  font-size: 2.5rem;
+  color: #1a237e;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem;
+  letter-spacing: 0.5px;
+}
+
+table {
+  border-collapse: separate;
+  border-spacing: 10px;
+  background: white;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  border-radius: 12px;
+  padding: 1rem;
+  transition: transform 0.2s ease;
+}
+
+table:hover {
+  transform: scale(1.01);
+}
+
+td {
+  padding: 0.5rem;
+}
+
+input[focusly] {
+  width: 60px;
+  height: 40px;
+  text-align: center;
+  font-size: 1rem;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s, transform 0.1s;
+}
+
+input[focusly]:hover {
+  border-color: #90caf9;
+}
+
+input[focusly]:focus {
+  border-color: #1e88e5;
+  box-shadow: 0 0 8px rgba(30, 136, 229, 0.4);
+  transform: scale(1.05);
+}

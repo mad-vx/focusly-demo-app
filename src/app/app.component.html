@@ -1,0 +1,13 @@
+<main>
+  <h1>Focusly Demo</h1>
+
+  <table focusly [focuslyGroup]="1" [focuslyRow]="0" [focuslyColumn]="0">
+    @for (row of rows; track row) {
+      <tr>
+        @for (col of columns; track col) {
+          <td><input focusly [focuslyGroup]="1" [focuslyRow]="row" [focuslyColumn]="col" placeholder="{{row}},{{col}}" /></td>
+        }
+      </tr>
+    }
+  </table>
+</main>
