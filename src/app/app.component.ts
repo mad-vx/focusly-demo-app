@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
-import { FocuslyDirective } from '@zaybu/focusly';
+import { FocuslyEnterKeySubscriberComponent } from '@zaybu/focusly';
+import { FocuslyDirective, FocuslyListenerComponent } from '@zaybu/focusly';
 
 @Component({
   selector: 'app-root',
-  imports: [FocuslyDirective],
+  imports: [FocuslyDirective, FocuslyListenerComponent, FocuslyEnterKeySubscriberComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
   standalone: true
@@ -13,5 +14,12 @@ export class AppComponent {
 
   columns = [0,1,2,3,4,5,6]; 
   rows = [0,1,2,3,4,5,6];
+  
+  onEnterKey(): void {
 
+  }
+
+  onEnterKey2(): void {
+
+  }
 }

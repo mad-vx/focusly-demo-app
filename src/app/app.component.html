@@ -1,5 +1,11 @@
 <main>
   <h1>Focusly Demo</h1>
+  <section class="instructions">
+  <h2>Introduction</h2>
+    <p>
+      <strong>Focusly</strong> is a lightweight Angular library that brings <strong>intuitive, keyboard-driven navigation</strong> to web applications.
+    </p>
+  </section>
 
   <section class="instructions">
   <h2>Keyboard Navigation</h2>
@@ -18,43 +24,54 @@
 </section>
 
   <h3>Try it here!</h3>
-  <table focusly [focuslyGroup]="1" [focuslyRow]="0" [focuslyColumn]="0">
-    @for (row of rows; track row) {
-      <tr>
-        @for (col of columns; track col) {
-          <td><input focusly [focuslyGroup]="1" [focuslyRow]="row" [focuslyColumn]="col" /></td>
-        }
-      </tr>
-    }
-  </table>
+  <focusly-listener [keyDownEvents]="['Enter']">
+    <focusly-enter-key-subscriber (keyboardEvent)="onEnterKey()">
+    </focusly-enter-key-subscriber>
+    <table focusly [focuslyGroup]="1" [focuslyRow]="0" [focuslyColumn]="0">
+      @for (row of rows; track row) {
+        <tr>
+          @for (col of columns; track col) {
+            <td><input focusly [focuslyGroup]="1" [focuslyRow]="row" [focuslyColumn]="col" /></td>
+          }
+        </tr>
+      }
+    </table>
+
+    <input type="button" value="Save" (click)="onEnterKey()"/><span>Processing...</span>
+  </focusly-listener>
 
   <h3>...and here!</h3>
-  <table focusly [focuslyGroup]="2" [focuslyRow]="0" [focuslyColumn]="0">
-    @for (row of rows; track row) {
-      <tr>
-        @for (col of columns; track col) {
-          @if (col !== 5 && col !== 3 && col !== 1) {
-            <td><input focusly [focuslyGroup]="2" [focuslyRow]="row" [focuslyColumn]="col" /></td>
+    <focusly-listener [keyDownEvents]="['Enter']">
+    <focusly-enter-key-subscriber (keyboardEvent)="onEnterKey2()">
+    </focusly-enter-key-subscriber>
+    <table focusly [focuslyGroup]="2" [focuslyRow]="0" [focuslyColumn]="0">
+      @for (row of rows; track row) {
+        <tr>
+          @for (col of columns; track col) {
+            @if (col !== 5 && col !== 3 && col !== 1) {
+              <td><input focusly [focuslyGroup]="2" [focuslyRow]="row" [focuslyColumn]="col" /></td>
+            }
+            @else if (col === 1) {
+              <td><label>Row {{row}}</label></td>
+            }
+            @else if (col === 3) {
+              <td><input readonly value="Skip"/></td>
+            }
+            @else {
+              <td>
+                <select focusly [focuslyGroup]="2" [focuslyRow]="row" [focuslyColumn]="col">
+                  <option>Red</option>
+                  <option>Yellow</option>
+                  <option>Blue</option>
+                  <option>Green</option>
+                </select>
+              </td>
+            }
           }
-          @else if (col === 1) {
-            <td><label>Row {{row}}</label></td>
-          }
-          @else if (col === 3) {
-            <td><input readonly value="Skip" /></td>
-          }
-          @else {
-            <td>
-              <select focusly [focuslyGroup]="2" [focuslyRow]="row" [focuslyColumn]="col">
-                <option>Red</option>
-                <option>Yellow</option>
-                <option>Blue</option>
-                <option>Green</option>
-              </select>
-            </td>
-          }
-        }
-      </tr>
-    }
-  </table>
+        </tr>
+      }
+    </table>
+    <input type="button" value="Save" (click)="onEnterKey2()"/><span>Processing...</span>
+    </focusly-listener>
 
 </main>
