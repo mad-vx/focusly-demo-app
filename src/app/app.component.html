@@ -37,7 +37,12 @@
       }
     </table>
 
-    <input type="button" value="Save" (click)="onEnterKey()"/><span>Processing...</span>
+    <input
+      type="button"
+      value="Save 1"
+      [class.save-active]="activeSaveButton() === 1"
+      (click)="onEnterKey()"
+    />
   </focusly-listener>
 
   <h3>...and here!</h3>
@@ -71,7 +76,18 @@
         </tr>
       }
     </table>
-    <input type="button" value="Save" (click)="onEnterKey2()"/><span>Processing...</span>
-    </focusly-listener>
 
+    <input
+      type="button"
+      value="Save 2"
+      [class.save-active]="activeSaveButton() === 2"
+      (click)="onEnterKey2()"
+    />
+  </focusly-listener>
+
+  <div class="toast-wrapper" [class.toast-visible]="showToast">
+    <div class="toast">
+      {{ lastActionMessage }}
+    </div>
+  </div>
 </main>
